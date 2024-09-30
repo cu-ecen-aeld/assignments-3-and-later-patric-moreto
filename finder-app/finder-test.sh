@@ -54,15 +54,15 @@ fi
 
 for i in $( seq 1 $NUMFILES)
 do
-	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	/bin/writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
-OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
+OUTPUTSTRING=$(finder.sh "$WRITEDIR" "$WRITESTR")
 
 # remove temporary directories
 rm -rf /tmp/aeld-data
 
-./writer "/tmp/assignment4-result.txt" "$OUTPUTSTRING"
+/bin/writer "/tmp/assignment4-result.txt" "$OUTPUTSTRING"
 
 set +e
 echo ${OUTPUTSTRING} | grep "${MATCHSTR}"
